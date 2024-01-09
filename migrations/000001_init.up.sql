@@ -7,6 +7,7 @@ CREATE TABLE `s_apps` (
   `name` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
   `secret` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
+  UNIQUE KEY `s_apps_name_key` (`name`),
   UNIQUE KEY `s_apps_secret_key` (`secret`)
 ) ENGINE=InnoDB AUTO_INCREMENT=100000 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
