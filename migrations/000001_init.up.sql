@@ -39,6 +39,7 @@ CREATE TABLE `s_staff` (
   `email` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
   `active` tinyint(1) NOT NULL DEFAULT '1',
+  `departure` tinyint(1) NOT NULL DEFAULT '0',
   `super` tinyint(1) NOT NULL DEFAULT '0',
   `phone` char(11) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
