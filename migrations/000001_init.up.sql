@@ -6,6 +6,7 @@ CREATE TABLE `s_apps` (
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `name` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
   `secret` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `active` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   UNIQUE KEY `s_apps_name_key` (`name`),
   UNIQUE KEY `s_apps_secret_key` (`secret`)
@@ -29,9 +30,9 @@ CREATE TABLE `s_auth_tokens` (
 ) ENGINE=InnoDB AUTO_INCREMENT=100000 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
--- ink.s_employees definition
+-- ink.s_staff definition
 
-CREATE TABLE `s_employees` (
+CREATE TABLE `s_staff` (
   `id` int NOT NULL AUTO_INCREMENT,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -41,8 +42,8 @@ CREATE TABLE `s_employees` (
   `super` tinyint(1) NOT NULL DEFAULT '0',
   `phone` char(11) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `s_employees_email_key` (`email`),
-  UNIQUE KEY `s_employees_phone_key` (`phone`)
+  UNIQUE KEY `s_staff_email_key` (`email`),
+  UNIQUE KEY `s_staff_phone_key` (`phone`)
 ) ENGINE=InnoDB AUTO_INCREMENT=100000 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
@@ -54,6 +55,7 @@ CREATE TABLE `s_roles` (
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `name` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
   `app_id` int NOT NULL,
+  `active` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   UNIQUE KEY `s_roles_app_id_name_key` (`app_id`,`name`),
   KEY `s_roles_app_id_idx` (`app_id`)
