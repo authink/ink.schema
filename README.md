@@ -1,1 +1,1 @@
-# ink.sql
+# ink.schema
