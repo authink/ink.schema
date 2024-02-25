@@ -4,12 +4,11 @@ CREATE TABLE `s_apps` (
   `id` int NOT NULL AUTO_INCREMENT,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `name` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `secret` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(32) NOT NULL,
+  `secret` varchar(64) NOT NULL,
   `active` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
-  UNIQUE KEY `s_apps_name_key` (`name`),
-  UNIQUE KEY `s_apps_secret_key` (`secret`)
+  UNIQUE KEY `s_apps_name_key` (`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=100000 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
@@ -19,8 +18,8 @@ CREATE TABLE `s_auth_tokens` (
   `id` int NOT NULL AUTO_INCREMENT,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `access_token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `refresh_token` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `access_token` varchar(64) NOT NULL,
+  `refresh_token` varchar(64) NOT NULL,
   `app_id` int NOT NULL,
   `account_id` int NOT NULL,
   PRIMARY KEY (`id`),
@@ -36,12 +35,12 @@ CREATE TABLE `s_staff` (
   `id` int NOT NULL AUTO_INCREMENT,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `email` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(128) NOT NULL,
+  `password` varchar(64) NOT NULL,
   `active` tinyint(1) NOT NULL DEFAULT '1',
   `departure` tinyint(1) NOT NULL DEFAULT '0',
   `super` tinyint(1) NOT NULL DEFAULT '0',
-  `phone` char(11) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` char(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `s_staff_email_key` (`email`),
   UNIQUE KEY `s_staff_phone_key` (`phone`)
@@ -54,7 +53,7 @@ CREATE TABLE `s_roles` (
   `id` int NOT NULL AUTO_INCREMENT,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `name` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(32) NOT NULL,
   `app_id` int NOT NULL,
   `active` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
@@ -69,8 +68,8 @@ CREATE TABLE `s_users` (
   `id` int NOT NULL AUTO_INCREMENT,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `email` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `password` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(128) NOT NULL,
+  `password` varchar(64) NOT NULL,
   `active` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   UNIQUE KEY `s_users_email_key` (`email`)
