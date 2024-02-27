@@ -7,3 +7,5 @@ DROP TABLE IF EXISTS `s_staff`;
 DROP TABLE IF EXISTS `s_roles`;
 
 DROP TABLE IF EXISTS `s_users`;
+
+DROP TABLE IF EXISTS `casbin_rule`;

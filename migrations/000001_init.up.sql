@@ -1,6 +1,6 @@
 -- ink.s_apps definition
 
-CREATE TABLE `s_apps` (
+CREATE TABLE IF NOT EXISTS `s_apps` (
   `id` int NOT NULL AUTO_INCREMENT,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -14,7 +14,7 @@ CREATE TABLE `s_apps` (
 
 -- ink.s_auth_tokens definition
 
-CREATE TABLE `s_auth_tokens` (
+CREATE TABLE IF NOT EXISTS `s_auth_tokens` (
   `id` int NOT NULL AUTO_INCREMENT,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -31,7 +31,7 @@ CREATE TABLE `s_auth_tokens` (
 
 -- ink.s_staff definition
 
-CREATE TABLE `s_staff` (
+CREATE TABLE IF NOT EXISTS `s_staff` (
   `id` int NOT NULL AUTO_INCREMENT,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -49,7 +49,7 @@ CREATE TABLE `s_staff` (
 
 -- ink.s_roles definition
 
-CREATE TABLE `s_roles` (
+CREATE TABLE IF NOT EXISTS `s_roles` (
   `id` int NOT NULL AUTO_INCREMENT,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -64,7 +64,7 @@ CREATE TABLE `s_roles` (
 
 -- ink.s_users definition
 
-CREATE TABLE `s_users` (
+CREATE TABLE IF NOT EXISTS `s_users` (
   `id` int NOT NULL AUTO_INCREMENT,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -73,4 +73,19 @@ CREATE TABLE `s_users` (
   `active` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   UNIQUE KEY `s_users_email_key` (`email`)
+) ENGINE=InnoDB AUTO_INCREMENT=100000 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+-- ink.casbin_rule definition
+
+CREATE TABLE IF NOT EXISTS `casbin_rule` (
+    `id` int NOT NULL AUTO_INCREMENT,
+    `ptype` varchar(32) NOT NULL DEFAULT '',
+    `v0` varchar(255) NOT NULL DEFAULT '',
+    `v1` varchar(255) NOT NULL DEFAULT '',
+    `v2` varchar(255) NOT NULL DEFAULT '',
+    `v3` varchar(255) NOT NULL DEFAULT '',
+    `v4` varchar(255) NOT NULL DEFAULT '',
+    `v5` varchar(255) NOT NULL DEFAULT '',
+    PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=100000 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
