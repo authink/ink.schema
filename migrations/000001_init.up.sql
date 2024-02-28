@@ -47,18 +47,19 @@ CREATE TABLE IF NOT EXISTS `s_staff` (
 ) ENGINE=InnoDB AUTO_INCREMENT=100000 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
--- ink.s_roles definition
+-- ink.s_groups definition
 
-CREATE TABLE IF NOT EXISTS `s_roles` (
+CREATE TABLE IF NOT EXISTS `s_groups` (
   `id` int NOT NULL AUTO_INCREMENT,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `name` varchar(32) NOT NULL,
+  `type` tinyint(1) NOT NULL,
   `app_id` int NOT NULL,
   `active` tinyint(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
-  UNIQUE KEY `s_roles_app_id_name_key` (`app_id`,`name`),
-  KEY `s_roles_app_id_idx` (`app_id`)
+  UNIQUE KEY `s_groups_app_id_type_name_key` (`app_id`,`type`,`name`),
+  KEY `s_groups_app_id_type_idx` (`app_id`,`type`)
 ) ENGINE=InnoDB AUTO_INCREMENT=100000 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 

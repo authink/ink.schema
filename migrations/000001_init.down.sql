@@ -4,7 +4,7 @@ DROP TABLE IF EXISTS `s_auth_tokens`;
 
 DROP TABLE IF EXISTS `s_staff`;
 
-DROP TABLE IF EXISTS `s_roles`;
+DROP TABLE IF EXISTS `s_groups`;
 
 DROP TABLE IF EXISTS `s_users`;
 
