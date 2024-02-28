@@ -29,9 +29,9 @@ CREATE TABLE IF NOT EXISTS `s_auth_tokens` (
 ) ENGINE=InnoDB AUTO_INCREMENT=100000 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
--- ink.s_staff definition
+-- ink.s_staffs definition
 
-CREATE TABLE IF NOT EXISTS `s_staff` (
+CREATE TABLE IF NOT EXISTS `s_staffs` (
   `id` int NOT NULL AUTO_INCREMENT,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -42,8 +42,8 @@ CREATE TABLE IF NOT EXISTS `s_staff` (
   `super` tinyint(1) NOT NULL DEFAULT '0',
   `phone` char(11) NOT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `s_staff_email_key` (`email`),
-  UNIQUE KEY `s_staff_phone_key` (`phone`)
+  UNIQUE KEY `s_staffs_email_key` (`email`),
+  UNIQUE KEY `s_staffs_phone_key` (`phone`)
 ) ENGINE=InnoDB AUTO_INCREMENT=100000 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 

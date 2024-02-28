@@ -2,7 +2,7 @@ DROP TABLE IF EXISTS `s_apps`;
 
 DROP TABLE IF EXISTS `s_auth_tokens`;
 
-DROP TABLE IF EXISTS `s_staff`;
+DROP TABLE IF EXISTS `s_staffs`;
 
 DROP TABLE IF EXISTS `s_groups`;
 
