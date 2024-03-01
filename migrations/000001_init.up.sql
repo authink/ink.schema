@@ -122,10 +122,6 @@ CREATE TABLE IF NOT EXISTS `s_dept_staffs` (
 CREATE TABLE IF NOT EXISTS `s_logs` (
   `id` int NOT NULL AUTO_INCREMENT,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `app_id` int NOT NULL,
-  `staff_id` int NOT NULL,
-  `resource` varchar(255) NOT NULL,
-  `action` varchar(32) NOT NULL,
   `detail` json,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=100000 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
