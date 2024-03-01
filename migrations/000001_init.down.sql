@@ -14,4 +14,6 @@ DROP TABLE IF EXISTS `s_dept_levels`;
 
 DROP TABLE IF EXISTS `s_dept_staffs`;
 
+DROP TABLE IF EXISTS `s_logs`;
+
 DROP TABLE IF EXISTS `s_users`;
