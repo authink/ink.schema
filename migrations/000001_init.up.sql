@@ -35,7 +35,6 @@ CREATE TABLE IF NOT EXISTS `s_staffs` (
 CREATE TABLE IF NOT EXISTS `s_auth_tokens` (
   `id` int NOT NULL AUTO_INCREMENT,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `access_token` varchar(64) NOT NULL,
   `refresh_token` varchar(64) NOT NULL,
   `app_id` int NOT NULL,
@@ -95,8 +94,6 @@ CREATE TABLE IF NOT EXISTS `s_departments` (
 
 CREATE TABLE IF NOT EXISTS `s_dept_levels` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `dept_id` int NOT NULL,
   `sub_dept_id` int NOT NULL,
   PRIMARY KEY (`id`),
@@ -108,8 +105,6 @@ CREATE TABLE IF NOT EXISTS `s_dept_levels` (
 
 CREATE TABLE IF NOT EXISTS `s_dept_staffs` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `dept_id` int NOT NULL,
   `staff_id` int NOT NULL,
   PRIMARY KEY (`id`),
